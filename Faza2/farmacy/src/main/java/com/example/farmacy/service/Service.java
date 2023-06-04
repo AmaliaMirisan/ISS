@@ -80,7 +80,8 @@ public class Service{
             personalMedicall = personalMedicalRepo.autentificarePersonalMedical(personalMedical.getUsername(), personalMedical.getPassword());
         } catch(Exception ex){
             throw ex;
-        }
+        }return personalMedicall;}
+    public Iterable<Comanda> getComenziNeonorate()    {
         List<Comanda> comenzi = (List<Comanda>) comandaRepo.findAll();
         List<Comanda> comenzi_filtrate = new ArrayList<>();
         Status verif = Status.NEONORATA;
