@@ -14,7 +14,7 @@ public class Medicament implements com.example.farmacy.domain.Entity<Integer>{
     private int id;
     private String denumire;
     private Integer cantitate;
-    public Medicament(String denumire, Integer stcantitateock) {
+    public Medicament(String denumire, Integer cantitate) {
         this.denumire = denumire;
         this.cantitate =cantitate;
     }
