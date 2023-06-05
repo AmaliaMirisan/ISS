@@ -12,56 +12,45 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.farmacy.controllers.PersonalMedicalController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.farmacy.controllers.PersonalMedicalController">
    <children>
-      <TableView fx:id="comenziTable" layoutX="14.0" layoutY="42.0" prefHeight="200.0" prefWidth="311.0">
+      <TableView fx:id="comenziTable" layoutX="25.0" layoutY="34.0" prefHeight="190.0" prefWidth="583.0">
         <columns>
           <TableColumn fx:id="nrComandaColumn" prefWidth="102.0" text="Numar comanda" />
           <TableColumn fx:id="dataComandaColumn" prefWidth="118.00003051757812" text="Data plasarii" />
+            <TableColumn fx:id="medicamentComandaColumn" prefWidth="89.33333333333331" text="Medicament" />
+            <TableColumn fx:id="cantitateComandaColumn" prefWidth="89.33333333333331" text="Cantitate" />
+            <TableColumn fx:id="sectieComandaColumn" prefWidth="89.33333333333331" text="Sectie" />
             <TableColumn fx:id="statusComandaColumn" prefWidth="89.33333333333331" text="Status" />
         </columns>
       </TableView>
-      <TableView fx:id="medicamenteTable" layoutX="380.0" layoutY="42.0" prefHeight="200.0" prefWidth="299.0">
+      <TableView fx:id="medicamenteTable" layoutX="25.0" layoutY="278.0" prefHeight="200.0" prefWidth="308.0">
          <columns>
-            <TableColumn fx:id="denumireMedicamentColumn" prefWidth="164.66671752929688" text="Denumire medicament" />
-            <TableColumn fx:id="cantitateMedicamentColumn" prefWidth="132.66668701171875" text="Cantitate disponibila" />
+            <TableColumn fx:id="idMedicamentColumn" prefWidth="46.0" text="ID" />
+            <TableColumn fx:id="denumireMedicamentColumn" prefWidth="142.0" text="Denumire " />
+            <TableColumn fx:id="cantitateMedicamentColumn" prefWidth="126.0" text="Cantitate" />
          </columns>
-      </TableView>
-      <TableView layoutX="14.0" layoutY="284.0" prefHeight="183.0" prefWidth="327.0">
-        <columns>
-          <TableColumn prefWidth="142.66665267944336" text="Denumire medicament" />
-          <TableColumn prefWidth="84.66667175292969" text="Cantitate" />
-            <TableColumn prefWidth="100.66668701171875" text="Data plasarii" />
-        </columns>
       </TableView>
       <Label layoutX="25.0" layoutY="14.0" text="Comenzi:" textFill="#be7dc7ee">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="380.0" layoutY="14.0" text="Medicamente disponibile:" textFill="#be7dc7ee">
+      <Label layoutX="25.0" layoutY="248.0" text="Medicamente disponibile:" textFill="#be7dc7ee">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="25.0" layoutY="257.0" text="Comanda in curs:" textFill="#be7dc7ee">
+      <Label layoutX="347.0" layoutY="288.0" text="Comanda medicament:" textFill="#be7dc7ee">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="361.0" layoutY="308.0" text="Comanda medicament:" textFill="#be7dc7ee">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField layoutX="465.0" layoutY="337.0" />
-      <Label layoutX="389.0" layoutY="341.0" text="Denumire:" />
-      <Label layoutX="389.0" layoutY="375.0" text="Cantitate:" />
-      <Spinner layoutX="465.0" layoutY="371.0" />
-      <Button layoutX="575.0" layoutY="419.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Sterge" />
-      <Button layoutX="464.0" layoutY="419.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Modifica" />
-      <Button layoutX="351.0" layoutY="419.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Adauga" />
-      <Button layoutX="115.0" layoutY="485.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="149.0" text="Plaseaza comanda">
+      <TextField fx:id="idMedicamentField" layoutX="411.0" layoutY="317.0" />
+      <Label layoutX="367.0" layoutY="321.0" text="ID:" />
+      <Label layoutX="349.0" layoutY="361.0" text="Cantitate:" />
+      <Spinner fx:id="cantitateMedicamentField" editable="true" layoutX="411.0" layoutY="357.0" />
+      <Button fx:id="plaseazaComandaButton" layoutX="334.0" layoutY="400.0" mnemonicParsing="false" onAction="#plaseazaComanda" prefHeight="35.0" prefWidth="137.0" text="Plaseaza comanda">
          <font>
             <Font size="14.0" />
          </font>
@@ -73,7 +62,7 @@
             </InnerShadow>
          </effect>
       </Button>
-      <Button fx:id="logout" layoutX="591.0" layoutY="501.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="37.0" prefWidth="97.0" text="logout" textFill="#d42ca1bd">
+      <Button fx:id="logout" layoutX="511.0" layoutY="450.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="37.0" prefWidth="97.0" text="logout" textFill="#d42ca1bd">
          <effect>
             <DropShadow>
                <color>
